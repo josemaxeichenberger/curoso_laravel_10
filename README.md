@@ -77,7 +77,7 @@ docker-compose up -d
 
 Acesse o container app
 ```sh
-docker-compose exec app bash
+docker-compose exec sistema_gestao bash
 ```
 
 
@@ -97,4 +97,3 @@ Acesse o projeto
 [http://localhost:8989](http://localhost:8989)
 
 
-github: https://github.com/VictorPadovan1997/setup-docker-laravel-10
