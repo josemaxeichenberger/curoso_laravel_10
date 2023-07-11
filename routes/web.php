@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::group( [ 'produtos' => 'index' ], function()
-{
-    Route::get('/produtos',[ProdutosController::class,'index'])->name('produto.index');
+Route::group(['produtos' => 'index'], function () {
+    Route::get('/produtos', [ProdutosController::class, 'index'])->name('produto.index');
+    Route::delete('/produtos', [ProdutosController::class, 'delete'])->name('produto.delete');
 });
-
-
