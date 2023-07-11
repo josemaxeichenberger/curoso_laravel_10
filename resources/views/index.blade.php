@@ -16,6 +16,7 @@
     <link rel="manifest" href="{{ asset('manifest/manifest.json') }}">
     <link rel="mask-icon" href="{{ asset('icones/safari-pinned-tab.svg') }}"color="#712cf9">
     <link rel="icon" href="{{ asset('favicon.ico') }}">
+    
     <meta name="theme-color" content="#712cf9">
 
     @yield('styles')
@@ -128,8 +129,12 @@
 
             @include('components.sidebar.sidebar')
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-
-
+                @yield('content')
+                <div class="d-flex justify-content-between flex-wrap"> 
+                <h1 class="h2">Dashboard</h1>    
+                </div>
+                
+{{-- 
                 <h2>Section title</h2>
                 <div class="table-responsive small">
                     <table class="table table-striped table-sm">
@@ -257,7 +262,7 @@
                             </tr>
                         </tbody>
                     </table>
-                </div>
+                </div> --}}
             </main>
         </div>
     </div>
