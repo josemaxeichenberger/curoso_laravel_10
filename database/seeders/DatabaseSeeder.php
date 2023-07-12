@@ -18,7 +18,19 @@ class DatabaseSeeder extends Seeder
             'valor' => '20.00',
             'created_at' => now(),
             'updated_at' => now(),
-            
+
+
+        ]);
+        DB::table('clientes')->insert([
+            'nome' => fake()->name(),
+            'email' => fake()->email(),
+            'endereco' => fake()->text(),
+            'logradouro' => fake()->locale(),
+            'cep'=> fake()->randomNumber(3),
+            'bairro'=>fake()->jobTitle(),
+            'created_at' => now(),
+            'updated_at' => now(),
+
 
         ]);
     }
