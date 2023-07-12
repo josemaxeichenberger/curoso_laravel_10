@@ -139,12 +139,14 @@
     </div>
     @yield('scripts')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.min.js" integrity="sha512-eYSzo+20ajZMRsjxB6L7eyqo5kuXuS2+wEbbOkpaur+sA2shQameiJiWEzCIDwJqaB0a4a6tCuEvCOBHUg3Skg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('js/color-modes.js') }}"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.11.0/jquery.mask.min.js" integrity="sha512-qIpWEYg346mjWns4AP+jJSYXnRr3juZHpRpFCEd2w0fm9N925knppqjvNJFY3xe6zQRVyDZCtZUdYYuOzSfS7w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="{{ asset('js/chart.umd.min.js') }}"></script>
     <script src="{{ asset('js/dashboard.js') }}"></script>
+    
+    <script src="{{ asset('js/blockui.js') }}"></script>
+    <script src="{{ asset('js/projeto.js') }}"></script>
 
 </body>
 

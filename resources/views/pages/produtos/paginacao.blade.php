@@ -10,7 +10,7 @@
                 <input type="search" class="form-control rounded" name="pesquisar" placeholder="Pesquisar" aria-label="Pesquisar"
                     aria-describedby="search-addon" />
                 <button type="submit" class="btn btn-outline-primary">Pesquisar</button>
-                <button type="button" class="btn btn-success">+ Produtos</button>
+                <a class="btn btn-success" href="{{route('produto.cadastrar')}}">+ Produtos</a>
             </div>
         </form>
     </div>
@@ -36,8 +36,8 @@
                         <td>{{ 'R$ '. number_format($produtoIten->valor,2,',','.') }}</td>
                         <td>
                             <a href="#" class="btn btn-info">Editar</a>
-                            <a href="{{route('produto.delete')}}" class="btn btn-danger">Excluir</a>
-
+                            <meta name="csrf-token" content="{{csrf_token()}}"/>
+                            <a onclick="deleteProduto('{{route('produto.delete', ['id' => $produtoIten->id])}}')" class="btn btn-danger">Excluir</a>
                         </td>
                     </tr>
                 @endforeach
