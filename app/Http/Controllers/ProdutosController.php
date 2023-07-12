@@ -6,8 +6,8 @@ use App\Http\Requests\FormRequestProdutos;
 use App\Models\Componetes;
 use App\Models\Produto;
 // use GuzzleHttp\Psr7\Request;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
-
 class ProdutosController extends Controller
 {
 
@@ -40,10 +40,31 @@ class ProdutosController extends Controller
    {
      
          $data = $request->all();
+         
          $componentes = new Componetes();
          $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
          Produto::create($data);
+         Toastr::success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
          return redirect()->route('produto.index');
+      
+   }
+   public function update(FormRequestProdutos $request,$id)
+   {
+     
+         $data = $request->all();
+         
+         $componentes = new Componetes();
+         $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
+         $buscar = Produto::find($id);
+         $buscar->update($data);
+         
+         return redirect()->route('produto.index');
+      
+   }
+   public function storeUpdate(Request $request,$id)
+   {
+         $findProdutos = Produto::where( 'id','=' , $id)->first();
+         return view('pages.produtos.atualiza',compact('findProdutos'));
       
    }
 }

@@ -9,6 +9,7 @@
     <meta name="generator" content="Hugo 0.112.5">
     <title>Dashboard Template · Bootstrap v5.3</title>
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 
     <!-- Favicons -->
     <link rel="apple-touch-icon" href="{{ asset('icones/apple-touch-icon.png') }}" sizes="180x180">
@@ -147,7 +148,9 @@
     
     <script src="{{ asset('js/blockui.js') }}"></script>
     <script src="{{ asset('js/projeto.js') }}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" ></script>
+    
+    {!! Toastr::message() !!}
 </body>
 
 </html>
