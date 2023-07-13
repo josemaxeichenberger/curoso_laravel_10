@@ -17,3 +17,22 @@ function deleteProduto(url) {
         });
     }
 }
+function deleteCliente(url) {
+    if(confirm('Tem certeza que deseja deletar este cliente?')) {
+        $.ajax({
+            url: url,
+            method: 'DELETE',
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        }).done(function(data) {
+            if (data.success == true) {
+                window.location.reload();
+            } else {
+                alert('Erro ao deletar cliente.');
+            }
+        }).fail(function() {
+            alert('Erro ao deletar cliente.');
+        });
+    }
+}

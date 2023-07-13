@@ -33,5 +33,14 @@ class DatabaseSeeder extends Seeder
 
 
         ]);
+        DB::table('vendas')->insert([
+            'numero' => fake()->randomNumber(5),
+            'produtos_id' => '50',
+            'cliente_id' => '5',
+            'created_at' => now(),
+            'updated_at' => now(),
+
+
+        ]);
     }
 }

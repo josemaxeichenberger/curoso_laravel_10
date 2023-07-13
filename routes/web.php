@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\VendasController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,5 +42,18 @@ Route::group(['prefix' => 'clientes'], function () {
     Route::put('/update/{id}', [ClientesController::class, 'update'])->name('clientes.update');
 
     Route::delete('/delete/{id}', [ClientesController::class, 'delete'])->name('clientes.delete');
+
+});
+
+Route::group(['prefix' => 'vendas'], function () {
+    Route::get('/', [VendasController::class, 'index'])->name('vendas.index');
+
+    Route::get('/cadastrar', [VendasController::class, 'cadastrar'])->name('vendas.cadastrar');
+    Route::post('/store', [VendasController::class, 'store'])->name('vendas.store');
+
+    Route::get('/storeUpdate/{id}', [VendasController::class, 'storeUpdate'])->name('vendas.storeUpdate');
+    Route::put('/update/{id}', [VendasController::class, 'update'])->name('vendas.update');
+
+    Route::delete('/delete/{id}', [VendasController::class, 'delete'])->name('vendas.delete');
 
 });

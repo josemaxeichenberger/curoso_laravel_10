@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FormRequestClientes;
 use App\Models\Cliente;
+use App\Models\Componetes;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
 
 class ClientesController extends Controller
@@ -36,12 +38,29 @@ class ClientesController extends Controller
      
          $data = $request->all();
          
-         $componentes = new Componetes();
-         $data['valor'] = $componentes->formatacaoMascaraDinheiroDecimal($data['valor']);
+ 
          $buscar = Cliente::find($id);
          $buscar->update($data);
          
          return redirect()->route('clientes.index');
       
+   }
+
+   public function store(FormRequestClientes $request)
+   {
+     
+         $data = $request->all();
+         Cliente::create($data);
+         Toastr::success('Messages in here', 'Title', ["positionClass" => "toast-top-center"]);
+         return redirect()->route('clientes.index');
+      
+   }
+   public function delete(Request $request)
+   {
+      // dd($request);
+      $id =  $request->id;
+      $buscar = Cliente::find($id);
+      $buscar->delete();
+      return response()->json(['success' => true]);
    }
 }
