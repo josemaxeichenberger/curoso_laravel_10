@@ -9,8 +9,8 @@
         <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
             <ul class="nav flex-column">
                 <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2 active" aria-current="page"
-                        href="#">
+                    <a class="nav-link d-flex align-items-center gap-2 " aria-current="page"
+                    href="{{route('dasboard.index')}}">
                         <svg class="bi">
                             <use xlink:href="#house-fill" />
                         </svg>
@@ -39,27 +39,12 @@
                         Vendas
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <svg class="bi">
-                            <use xlink:href="#graph-up" />
-                        </svg>
-                        Reports
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link d-flex align-items-center gap-2" href="#">
-                        <svg class="bi">
-                            <use xlink:href="#puzzle" />
-                        </svg>
-                        Integrations
-                    </a>
-                </li>
+             
             </ul>
 
       
 
-            <hr class="my-3">
+            {{-- <hr class="my-3">
 
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
@@ -78,7 +63,7 @@
                        Sair
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
         </div>
     </div>
 </div>

@@ -35,7 +35,7 @@
                         <td>{{ $Iten->numero }}</td>
                         <td>{{ $Iten->cliente->nome }}</td>
                         <td>{{ $Iten->produtos->nome }}</td>
-                       
+                       <td><a class="btn btn-info" href="{{route('vendas.sendMailG', $Iten->numero )}}">Email</a></td>
                     </tr>
                 @endforeach
             </tbody>
