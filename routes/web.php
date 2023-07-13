@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\DasboardController;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\VendasController;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
@@ -26,7 +27,17 @@ Route::group(['prefix' => 'dasboard'], function () {
 
 });
 
+Route::group(['prefix' => 'usuarios'], function () {
+    Route::get('/', [UsuarioController::class, 'index'])->name('usuarios.index');
+    Route::get('/cadastrar', [UsuarioController::class, 'cadastrar'])->name('usuarios.cadastrar');
+    Route::post('/store', [UsuarioController::class, 'store'])->name('usuarios.store');
 
+    Route::get('/storeUpdate/{id}', [UsuarioController::class, 'storeUpdate'])->name('usuarios.storeUpdate');
+    Route::put('/update/{id}', [UsuarioController::class, 'update'])->name('usuarios.update');
+
+    Route::delete('/delete/{id}', [UsuarioController::class, 'delete'])->name('usuarios.delete');
+
+});
 
 Route::group(['prefix' => 'produtos'], function () {
     Route::get('/', [ProdutosController::class, 'index'])->name('produto.index');

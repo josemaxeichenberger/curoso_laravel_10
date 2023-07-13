@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -37,6 +38,15 @@ class DatabaseSeeder extends Seeder
             'numero' => fake()->randomNumber(5),
             'produtos_id' => '50',
             'cliente_id' => '5',
+            'created_at' => now(),
+            'updated_at' => now(),
+
+
+        ]);
+        DB::table('users')->insert([
+            'name' =>fake()->name(),
+            'email' => fake()->email(),
+            'password' => Hash::make('jose@2023'),
             'created_at' => now(),
             'updated_at' => now(),
 
